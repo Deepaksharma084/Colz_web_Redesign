@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var sidebar = document.querySelector("#sideBar");
     var closee = document.querySelector(".close");
     var a = document.querySelectorAll("#sideBar a h3")
+    var isSidebarOpen = false;
 
     let tl3 = gsap.timeline();
     tl3.from(sidebar, {
@@ -69,18 +70,45 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     tl3.pause()
-    menu.addEventListener("click", function () {
+
+    function openSidebar() {
         sidebar.style.display = "flex";
         closee.style.display = "block";
         menu.style.display = "none";
         menu.style.right = "7%";
         menu.style.top = "1%";
-        tl3.play()
-    })
-    closee.addEventListener("click", function () {
-        // sidebar.style.display = "none";
+        tl3.play();
+        isSidebarOpen = true;
+    }
+
+    function closeSidebar() {
+        sidebar.style.display = "none";
+        closee.style.display = "none";
         menu.style.display = "block";
-        tl3.reverse()
+        tl3.reverse();
+        isSidebarOpen = false;
+    }
+
+    menu.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (!isSidebarOpen) {
+            openSidebar();
+        }
+    })
+
+    closee.addEventListener("click", function (event) {
+        event.stopPropagation();
+        closeSidebar();
+    })
+
+    document.addEventListener("click", function (event) {
+        const clickedInsideSidebar = sidebar.contains(event.target);
+        const clickedOnMenu = menu.contains(event.target);
+        const clickedOnClose = closee.contains(event.target);
+
+        if (isSidebarOpen && !clickedInsideSidebar && !clickedOnMenu && !clickedOnClose) {
+            closeSidebar();
+        }
     })
 
 
@@ -255,12 +283,12 @@ tl4.pause();
 kn_first_Img_div.addEventListener("mouseenter", () => {
     tl4.play();
     kn_info_sideBar.style.display = "flex";
-    icon1.style.display="none"
+    icon1.style.display = "none"
 
 })
 kn_first_Img_div.addEventListener("mouseleave", () => {
     tl4.reverse();
-    icon1.style.display="block"
+    icon1.style.display = "block"
 })
 
 //kn_wife
@@ -284,13 +312,13 @@ tl5.pause();
 kn_wife_second_Img_div.addEventListener("mouseenter", () => {
     tl5.play();
     kn_wife__info_sideBar.style.display = "flex";
-    icon2.style.display="none"
+    icon2.style.display = "none"
 
 
 })
 kn_wife_second_Img_div.addEventListener("mouseleave", () => {
     tl5.reverse();
-    icon2.style.display="block"
+    icon2.style.display = "block"
 
 })
 
@@ -370,23 +398,22 @@ window.addEventListener('touchmove', handleScroll);
 //map animation
 var map = document.querySelector("footer .zeroPadding iframe");
 
-map.addEventListener("mouseenter", () => {
-    console.log("entered")
-    gsap.to(map, {
-        scale: 1.05,
-    })
-})
-map.addEventListener("mouseleave", () => {
-    gsap.to(map, {
-        scale: 1,
-    })
-map.addEventListener("mouseenter",()=>{
-    console.log("Entered");
-    gsap.to(map,{
-        scale:1,
-        opacity:0,
-        duration:2,
-        scrub:2,
-    })
-})
-})
+if (map) {
+    map.addEventListener("mouseenter", () => {
+        gsap.to(map, {
+            scale: 1.05,
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.out",
+        });
+    });
+
+    map.addEventListener("mouseleave", () => {
+        gsap.to(map, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power1.out",
+        });
+    });
+}

@@ -9,10 +9,10 @@ body {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
-    /* Keep the scrolling functionality */
     scrollbar-width: none;
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(180deg, #f4f8fc 0%, #eef4f9 100%);
+    color: #14213d;
 }
 
 body {
@@ -46,12 +46,13 @@ html::-webkit-scrollbar {
 }
 
 #navUpper {
-    background-color: rgba(172, 189, 207, 0.61);
+    background: linear-gradient(90deg, #f8fbff 0%, #dfeaf4 100%);
     height: 6vw;
     width: 100vw;
     display: flex;
     align-items: center;
     gap: 1vw;
+    box-shadow: 0 0.2vw 0.8vw rgba(20, 33, 61, 0.08);
 }
 
 #navUpper #logo {
@@ -75,11 +76,12 @@ nav {
     z-index: 13;
     height: 4vw;
     width: 100vw;
-    background-color: #002A5C;
+    background: linear-gradient(90deg, #002A5C 0%, #00428f 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5vw;
+    padding: 0.5vw 1.3vw;
+    box-shadow: 0 0.3vw 0.9vw rgba(0, 0, 0, 0.2);
 }
 
 nav #box1 {
@@ -102,7 +104,8 @@ nav #box1 h3 {
 }
 
 nav #box1 h3:hover {
-    color: #bbbfbf;
+    color: #ffd166;
+    transform: translateY(-0.1vw);
 }
 
 #box2 #menu {
@@ -151,7 +154,7 @@ nav #box1 h3:hover {
     color: #0173ff;
 }
 
-#section1 #sideBar #box1{
+#section1 #sideBar #box1 {
     display: none;
 }
 
@@ -169,12 +172,14 @@ nav #box1 h3:hover {
     width: 100vw;
     display: flex;
     justify-content: center;
+    background: #0f172a;
 }
 
 #autoPlayVideo video {
     height: 39.5vw;
     width: 100vw;
     object-fit: cover;
+    filter: brightness(0.82) saturate(1.05);
 }
 
 #string1 {
@@ -207,16 +212,18 @@ nav #box1 h3:hover {
 }
 
 #greetings {
-    background-color: rgba(172, 189, 207, 0.61);
+    background: linear-gradient(135deg, rgba(223, 234, 244, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
     height: 26vw;
-    width: 100vw;
-    border-radius: 1.3vw;
+    width: 96vw;
+    margin: 2vw auto 0;
+    border-radius: 1.6vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 2vw;
     gap: 2.2vw;
+    box-shadow: 0 0.8vw 2vw rgba(20, 33, 61, 0.12);
+    padding: 1.5vw 0;
 }
 
 #greetings #bx1 {
@@ -245,19 +252,22 @@ nav #box1 h3:hover {
     justify-content: center;
     font-size: 1.1vw;
 }
-#greetings #imgFirstGrp{
+
+#greetings #imgFirstGrp {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12vw;
 }
-#greetings #imgSecondGrp{
+
+#greetings #imgSecondGrp {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12vw;
 }
-#greetings #imgThirdGrp{
+
+#greetings #imgThirdGrp {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -331,12 +341,15 @@ nav #box1 h3:hover {
 
 #AboutUs {
     height: 25.7vw;
-    width: 100vw;
-    background-color: rgb(149, 173, 199);
-    border-radius: 1.3vw;
+    width: 96vw;
+    margin: 2vw auto 0;
+    background: linear-gradient(135deg, #95adc7 0%, #4d7aa6 100%);
+    border-radius: 1.6vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0.8vw 2vw rgba(20, 33, 61, 0.16);
+    overflow: hidden;
 }
 
 #AboutUs #imgDiv {
@@ -366,10 +379,12 @@ nav #box1 h3:hover {
 #AboutUs #textDiv h1 {
     font-size: 3vw;
     text-decoration: underline;
+    color: #fff;
 }
 
 #AboutUs #textDiv p {
     font-size: 1.5vw;
+    color: #f7fbff;
 }
 
 #AboutUs #textDiv #buttonDiv {
@@ -381,26 +396,34 @@ nav #box1 h3:hover {
 #AboutUs #textDiv #buttonDiv button {
     font-weight: 600;
     width: 10vw;
-    padding: 0.5vw 0.5vw;
-    font-size: 1.5vw;
-    border-radius: 1vw;
-    background: linear-gradient(0.25turn, #95ADC7, hsl(194, 89%, 75%));
+    padding: 0.6vw 0.8vw;
+    font-size: 1.4vw;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ffd166 0%, #ffb703 100%);
     border: none;
-    box-shadow: 0vw 0.5vw 0.6vw rgb(71, 74, 74);
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    color: #112240;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#AboutUs #textDiv #buttonDiv button:hover {
+    transform: translateY(-0.2vw);
+    box-shadow: 0 0.8vw 1.3vw rgba(0, 0, 0, 0.25);
 }
 
 
 #keyPeople {
-    height: 28vw;
-    width: 100vw;
-    margin-top: 2.3vw;
-    border-radius: 1.3vw;
-    background-color: rgb(255, 255, 255);
+    height: 30vw;
+    width: 96vw;
+    margin: 2.3vw auto 0;
+    border-radius: 1.6vw;
+    background: linear-gradient(135deg, #ffffff 0%, #f4f8fc 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    box-shadow: 0 0.8vw 2vw rgba(20, 33, 61, 0.1);
 }
 
 #keyPeople #textPart {
@@ -433,7 +456,9 @@ nav #box1 h3:hover {
     cursor: pointer;
     box-shadow: 0.5vw 0.5vw 0.6vw rgb(141, 155, 155);
 }
-#keyPeople #imagePart #first-img-div i,#keyPeople #imagePart #second-img-div i{
+
+#keyPeople #imagePart #first-img-div i,
+#keyPeople #imagePart #second-img-div i {
     font-size: 3vw;
     right: 0;
     filter: invert(1);
@@ -441,12 +466,14 @@ nav #box1 h3:hover {
     animation: levitate 0.5s ease-in-out infinite;
 
 }
+
 @keyframes levitate {
     100% {
         font-size: 3.2vw;
 
     }
 }
+
 #keyPeople #imagePart #first-img-div img {
     height: 24.8vw;
 }
@@ -495,7 +522,14 @@ nav #box1 h3:hover {
 
 #flower img {
     width: 20vw;
-    height: 23vw;
+    height: 20vw;
+}
+
+#keyPeople {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 #keyPeople #imagePart #second-img-div {
@@ -527,12 +561,13 @@ nav #box1 h3:hover {
 #enqForm form {
     border-radius: 1.5vw;
     padding: 2vw;
-    background-color: #BFD0E2;
+    background: linear-gradient(135deg, #bcd4e6 0%, #e9f3fb 100%);
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-size: 1.2vw;
     gap: 1vw;
+    box-shadow: 0 0.8vw 1.7vw rgba(20, 33, 61, 0.12);
 }
 
 #enqForm form input {
@@ -572,13 +607,21 @@ select {
 }
 
 #enqForm form button {
-    background: linear-gradient(0.25turn, #d0f08c, #45A049);
-    width: 6vw;
-    border-radius: 0.4vw;
-    padding: 0.2vw;
-    font-size: 1.3vw;
+    background: linear-gradient(90deg, #2e8b57 0%, #45a049 100%);
+    width: 7vw;
+    border-radius: 999px;
+    padding: 0.5vw 0.7vw;
+    font-size: 1.2vw;
     font-weight: 600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+#enqForm form button:hover {
+    transform: translateY(-0.15vw);
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.2);
 }
 
 #enqForm img {
@@ -623,37 +666,99 @@ select {
 
 footer {
     margin-top: 2.3vw;
-    height: 30vw;
+    padding: 2.2vw 1.8vw;
     width: 100vw;
-    background-color: #262649;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(135deg, #16213e 0%, #262649 45%, #0f172a 100%);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2vw;
     color: white;
 }
 
 footer .footerchilds {
-    height: 30vw;
-    width: calc(100vw / 4);
-    padding: 3vw;
+    min-height: 24vw;
+    padding: 1.5vw 1.3vw;
     display: flex;
     flex-direction: column;
-    gap: 3vw;
-    font-size: 1.1vw;
+    gap: 1vw;
+    font-size: 1.05vw;
+    z-index: 12;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.1vw;
+    box-shadow: 0 0.7vw 1.4vw rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
 }
 
-footer .footerchilds ul li:hover {
-    font-size: 1.2vw;
+footer .footerchilds h1 {
+    font-size: 1.3vw;
+    color: #f8d37b;
+    margin-bottom: 0.3vw;
+}
+
+footer .footerchilds p,
+footer .footerchilds a,
+footer .footerchilds li {
+    color: #e8edf8;
+    line-height: 1.5;
+}
+
+footer .footerchilds a {
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+footer .footerchilds a:hover {
+    color: #ffc857;
+    transform: translateX(0.2vw);
+}
+
+footer .footerchilds ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6vw;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footerchilds ul li::before {
+    content: "•";
+    color: #f8d37b;
+    margin-right: 0.5vw;
 }
 
 footer .zeroPadding {
-    padding: 0vw;
-    align-items: center;
+    padding: 0;
+    align-items: stretch;
     justify-content: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-footer .zeroPadding iframe {
-    height: 25vw;
-    width: 20vw;
-    border-radius: 0.5vw;
+footer .map-card {
+    width: 100%;
+    height: 100%;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.1vw;
+    box-shadow: 0 0.7vw 1.4vw rgba(0, 0, 0, 0.2);
+}
+
+footer .map-card h1 {
+    font-size: 1.2vw;
+    margin-bottom: 0.2vw;
+}
+
+footer .map-card iframe {
+    height: 100%;
+    min-height: 18vw;
+    width: 100%;
+    border: 0;
+    border-radius: 0.8vw;
 }
